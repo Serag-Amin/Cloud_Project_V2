@@ -19,14 +19,14 @@ connection.connect((err) => {
         return;
     }
     console.log('Connected to MySQL as id ' + connection.threadId);
-  //   const createTableQuery = `
-  //   CREATE TABLE IF NOT EXISTS student (
-  //     id INT AUTO_INCREMENT PRIMARY KEY,
-  //     name VARCHAR(255),
-  //     cgba FLOAT,
-  //     age INT
-  //   )
-  // `;
+    const createTableQuery = `
+    CREATE TABLE IF NOT EXISTS student (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      name VARCHAR(255),
+      cgba FLOAT,
+      age INT
+    )
+  `;
   connection.query(createTableQuery, (err, result) => {
     if (err) {
       console.error('Error creating table: ' + err.stack);
@@ -34,10 +34,10 @@ connection.connect((err) => {
     }
     console.log('Table created successfully');
   });
-//   const insertDataQuery = `
-//   INSERT INTO student (name, age,cgba)
-//   VALUES ('Ahmad', 21,4.0)
-// `;
+  const insertDataQuery = `
+  INSERT INTO student (name, age,cgba)
+  VALUES ('Ahmad', 21,4.0)
+`;
 
 connection.query(insertDataQuery, (err, result) => {
   if (err) {
