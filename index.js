@@ -3,7 +3,7 @@ const mysql = require('mysql');
 const path = require('path'); // Import path module
 
 const app = express();
-
+// Sleep for 3 seconds
 function sleepSync(ms) {
   const end = Date.now() + ms;
   while (Date.now() < end) continue;
