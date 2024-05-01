@@ -4,6 +4,11 @@ const path = require('path'); // Import path module
 
 const app = express();
 
+function sleepSync(ms) {
+  const end = Date.now() + ms;
+  while (Date.now() < end) continue;
+}
+sleepSync(3000);
 // MySQL Connection
 const connection = mysql.createConnection({
     host: 'mysql',
