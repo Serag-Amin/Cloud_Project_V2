@@ -7,7 +7,7 @@
     }
     
     .navbar{
-        background-color: var(--dark-color);
+        background-color: #112162;
     
     }
     
@@ -17,12 +17,13 @@
     }
     
     .navbar .navbar-nav .nav-link {
-        color:black;
+        color:white;
     }
     
     .navbar .search{
     
         border-left: 1px solid;
+        color: white;
     }
     
     .navbar-toggler {
