@@ -26,7 +26,7 @@ connection.connect((err) => {
     console.log('Connected to MySQL as id ' + connection.threadId);
     const createTableQuery = `
     CREATE TABLE IF NOT EXISTS student (
-      id INT AUTO_INCREMENT PRIMARY KEY,
+      id INT PRIMARY KEY,
       name VARCHAR(255),
       cgba FLOAT,
       age INT
@@ -39,19 +39,7 @@ connection.connect((err) => {
     }
     console.log('Table created successfully');
   });
-  const insertDataQuery = `
-  INSERT INTO student (name, age,cgba)
-  VALUES ('Ahmad', 21,4.0)
-`;
-
-connection.query(insertDataQuery, (err, result) => {
-  if (err) {
-    console.error('Error inserting data: ' + err.stack);
-    return;
-  }
-  console.log('Starting data inserted successfully');
-});
-  
+ 
 });
 app.get('/data', (req, res) => {
     connection.query('SELECT * FROM student', (err, rows) => {
